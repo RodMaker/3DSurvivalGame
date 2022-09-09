@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4439826568172143281}
   m_Layer: 0
   m_Name: Stone
-  m_TagString: Untagged
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,4 +106,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb4aa71e33ef58f41958b8e52899db95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInRange: 0
   ItemName: Stone

@@ -14,6 +14,9 @@ public class SelectionManager : MonoBehaviour
 
     public GameObject interaction_Info_UI;
     TextMeshProUGUI interaction_text;
+
+    public Image centerDotImage;
+    public Image handIcon;
  
     //DONT FORGET TO ALSO ADD -  using UnityEngine.UI;  - at the top of the script
     
@@ -52,11 +55,26 @@ public class SelectionManager : MonoBehaviour
                 selectedObject = interactable.gameObject;
                 interaction_text.text = interactable.GetItemName(); 
                 interaction_Info_UI.SetActive(true);
+
+                if (interactable.CompareTag("Pickable"))
+                {
+                    centerDotImage.gameObject.SetActive(false);
+                    handIcon.gameObject.SetActive(true);
+                }
+                else
+                {
+                    handIcon.gameObject.SetActive(false);
+                    centerDotImage.gameObject.SetActive(true);
+                }
+
             }
             else // if there is a hit, but without an Interactable Object
             {
                 onTarget = false;
                 interaction_Info_UI.SetActive(false);
+                
+                handIcon.gameObject.SetActive(false);
+                centerDotImage.gameObject.SetActive(true);
             }
  
         }
@@ -64,6 +82,9 @@ public class SelectionManager : MonoBehaviour
         {
             onTarget = false;
             interaction_Info_UI.SetActive(false);
+
+            handIcon.gameObject.SetActive(false);
+            centerDotImage.gameObject.SetActive(true);
         }
        
     
