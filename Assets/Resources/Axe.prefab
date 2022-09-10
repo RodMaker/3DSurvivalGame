@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6286553822368463173}
   - component: {fileID: 2422131285038769305}
   - component: {fileID: -1789779113846953493}
+  - component: {fileID: 1309005866768436328}
   m_Layer: 5
   m_Name: Axe
   m_TagString: Untagged
@@ -119,3 +120,23 @@ MonoBehaviour:
   Req1amount: 3
   Req2amount: 3
   numOfRequirements: 2
+--- !u!114 &1309005866768436328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5304482801459380609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163fa4c62a04ba242a4ddf21ff014842, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTrashable: 0
+  thisName: Axe
+  thisDescription: A sharp tool.
+  thisFunctionality: Used to chop down trees.
+  isConsumable: 0
+  healthEffect: 0
+  hungerEffect: 0
+  thirstEffect: 0
