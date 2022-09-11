@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 163fa4c62a04ba242a4ddf21ff014842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTrashable: 0
+  isTrashable: 1
   thisName: Axe
   thisDescription: A sharp tool.
   thisFunctionality: Used to chop down trees.
@@ -140,3 +140,6 @@ MonoBehaviour:
   healthEffect: 0
   hungerEffect: 0
   thirstEffect: 0
+  isEquippable: 1
+  isInsideQuickSlot: 0
+  isSelected: 0
