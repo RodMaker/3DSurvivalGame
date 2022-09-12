@@ -17,6 +17,8 @@ public class SelectionManager : MonoBehaviour
 
     public Image centerDotImage;
     public Image handIcon;
+
+    public bool handIsVisible;
  
     //DONT FORGET TO ALSO ADD -  using UnityEngine.UI;  - at the top of the script
     
@@ -60,11 +62,15 @@ public class SelectionManager : MonoBehaviour
                 {
                     centerDotImage.gameObject.SetActive(false);
                     handIcon.gameObject.SetActive(true);
+
+                    handIsVisible = true;
                 }
                 else
                 {
                     handIcon.gameObject.SetActive(false);
                     centerDotImage.gameObject.SetActive(true);
+
+                    handIsVisible = false;
                 }
 
             }
@@ -75,6 +81,8 @@ public class SelectionManager : MonoBehaviour
                 
                 handIcon.gameObject.SetActive(false);
                 centerDotImage.gameObject.SetActive(true);
+
+                handIsVisible = false;
             }
  
         }
@@ -85,6 +93,8 @@ public class SelectionManager : MonoBehaviour
 
             handIcon.gameObject.SetActive(false);
             centerDotImage.gameObject.SetActive(true);
+
+            handIsVisible = false;
         }
        
     
