@@ -97,11 +97,11 @@ public class CraftingSystem : MonoBehaviour
 
     void CraftAnyItem(Blueprint blueprintToCraft)
     {
-        // add item into inventory
-        for (var i = 0; i < blueprintToCraft.numberOfItemsToProduce; i++)
-        {
-            InventorySystem.Instance.AddToInventory(blueprintToCraft.itemName);
-        }
+        SoundManager.Instance.PlaySound(SoundManager.Instance.craftingSound);
+
+        StartCoroutine(craftedDelayForSound(blueprintToCraft));
+
+        // place the produce code here if we don't need the delay 
 
         // remove resources
         if (blueprintToCraft.numOfRequirements == 1)
@@ -123,6 +123,17 @@ public class CraftingSystem : MonoBehaviour
         yield return 0; // so there is no delay
         InventorySystem.Instance.ReCalculateList();
         RefreshNeededItems();
+    }
+
+    IEnumerator craftedDelayForSound(Blueprint blueprintToCraft)
+    {
+        yield return new WaitForSeconds(1f);
+
+        // produce the amount of items according to the blueprint
+        for (var i = 0; i < blueprintToCraft.numberOfItemsToProduce; i++)
+        {
+            InventorySystem.Instance.AddToInventory(blueprintToCraft.itemName);
+        }
     }
 
     // Update is called once per frame
