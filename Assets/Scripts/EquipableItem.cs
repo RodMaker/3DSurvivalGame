@@ -6,6 +6,7 @@ using UnityEngine;
 public class EquipableItem : MonoBehaviour
 {
     public Animator animator;
+    //private bool swingWait = false;
 
     // Start is called before the first frame update
     void Start()
@@ -19,8 +20,13 @@ public class EquipableItem : MonoBehaviour
         if (Input.GetMouseButtonDown(0)
             && InventorySystem.Instance.isOpen == false
             && CraftingSystem.Instance.isOpen == false
-            && SelectionManager.Instance.handIsVisible == false) // left mouse button
+            && SelectionManager.Instance.handIsVisible == false
+            //&& swingWait == false
+            && !ConstructionManager.Instance.inConstructionMode)
         {
+            // wait for the swing to complete, before allowing another swing
+            //swingWait = true;
+
             StartCoroutine(SwingSoundDelay());
 
             animator.SetTrigger("hit");
